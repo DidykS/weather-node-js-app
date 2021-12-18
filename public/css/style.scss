@@ -1,0 +1,210 @@
+// VARIABLES
+$white: #ffffff;
+$body-color: #d6dbe8;
+$dp-blue: #0b213b;
+$btn-bg: #f21f1f;
+$text: #333;
+
+// MAIN STYLES
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  background-color: $body-color;
+  color: $white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// CONTAINER
+.container {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+// WRAPPER
+.wrapper {
+  width: 100%;
+  padding: 20px;
+  overflow: hidden;
+
+  text-align: center;
+
+  border-radius: 5px;
+  background-image: linear-gradient(
+    -225deg,
+    rgba(55, 98, 145, 0.89) 0%,
+    rgba(171, 191, 212, 0.6) 100%
+  );
+
+  &__search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--btn {
+      margin: 6px;
+      height: 40px;
+      width: 40px;
+
+      line-height: 10px;
+
+      outline: none;
+      border-radius: 50%;
+      border: 0;
+      background-color: $btn-bg;
+      color: $white;
+
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+
+      &:hover {
+        background-color: darken($color: $btn-bg, $amount: 10);
+      }
+    }
+
+    &--input {
+      width: 300px;
+      padding: 10px 15px;
+
+      background: inherit;
+      border: 1px solid $body-color;
+      outline: none;
+      border-radius: 25px;
+
+      color: $white;
+      font-size: 16px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 20px;
+
+    &--header {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    &--temp {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+
+    &--fall {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+      &--item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+}
+
+// LOCATION
+.location {
+  align-self: end;
+
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+// DATE
+.date {
+  font-size: 16px;
+}
+
+// TEMPERATURE
+.temperature {
+  font-size: 80px;
+  font-weight: 500;
+}
+
+// DESCRIPTION
+.description {
+  align-self: center;
+  margin-bottom: 30px;
+
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 1.6px;
+}
+
+// FALL ITEMS
+.item__title {
+  font-size: 14px;
+  letter-spacing: 1.2px;
+
+  &--lohi {
+    width: 80px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.item__icon {
+  height: 40px;
+  margin: 5px 0;
+
+  & img {
+    height: 100%;
+    display: block;
+  }
+}
+
+.item__result {
+  &--lohi {
+    width: 80px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
