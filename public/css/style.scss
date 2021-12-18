@@ -208,3 +208,21 @@ a {
     justify-content: space-between;
   }
 }
+
+// ERROR
+.error {
+  width: 100%;
+  padding: 20px;
+  overflow: hidden;
+
+  text-align: center;
+  color: $dp-blue;
+
+  &__status {
+    font-size: 120px;
+  }
+
+  &__text {
+    font-size: 30px;
+  }
+}

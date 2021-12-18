@@ -230,4 +230,20 @@ a:hover {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
+
+.error {
+  width: 100%;
+  padding: 20px;
+  overflow: hidden;
+  text-align: center;
+  color: #0b213b;
+}
+
+.error__status {
+  font-size: 120px;
+}
+
+.error__text {
+  font-size: 30px;
+}
 /*# sourceMappingURL=style.css.map */
