@@ -5,16 +5,20 @@ const express = require('express')
 require('dotenv').config()
 // import morgan
 const morgan = require('morgan')
+// import createPath
+const createPath = require('./helpers/create-path')
 
 const app = express()
 
 // MIDDLEWARES
 // morgan logger middleware
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms'))
+// middleware for static files
+app.use(express.static(__dirname))
 
 // ROUTES
 app.get('/', (req, res) => {
-  res.send('Hello World')
+  res.sendFile(createPath('index'))
 })
 
 // LISTEN
