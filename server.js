@@ -17,8 +17,14 @@ app.use(morgan(':method :url :status :res[content-length] - :response-time ms'))
 app.use(express.static(__dirname))
 
 // ROUTES
+// main route
 app.get('/', (req, res) => {
   res.sendFile(createPath('index'))
+})
+
+// error route
+app.use((req, res) => {
+  res.status(400).sendFile(createPath('error'))
 })
 
 // LISTEN
