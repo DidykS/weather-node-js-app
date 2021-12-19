@@ -10,6 +10,9 @@ const createPath = require('./helpers/create-path')
 
 const app = express()
 
+// initialization of ejs
+app.set('view engine', 'ejs')
+
 // MIDDLEWARES
 // morgan logger middleware
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms'))
@@ -19,12 +22,12 @@ app.use(express.static(__dirname))
 // ROUTES
 // main route
 app.get('/', (req, res) => {
-  res.sendFile(createPath('index'))
+  res.render(createPath('index'))
 })
 
 // error route
 app.use((req, res) => {
-  res.status(400).sendFile(createPath('error'))
+  res.status(400).render(createPath('error'))
 })
 
 // LISTEN
