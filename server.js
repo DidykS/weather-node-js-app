@@ -26,7 +26,9 @@ app.use(express.urlencoded({ extended: false }))
 // ROUTES
 // main route
 app.get('/', (req, res) => {
-  res.render(createPath('index'))
+  const title = 'Home'
+
+  res.render(createPath('index'), { title })
 })
 
 // post route
@@ -34,7 +36,8 @@ app.use(searchRoute)
 
 // error route
 app.use((req, res) => {
-  res.status(400).render(createPath('error'))
+  const title = 'Error'
+  res.status(400).render(createPath('error'), { title })
 })
 
 // LISTEN
