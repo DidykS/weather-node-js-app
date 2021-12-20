@@ -7,6 +7,8 @@ require('dotenv').config()
 const morgan = require('morgan')
 // import createPath
 const createPath = require('./helpers/create-path')
+// import search route
+const searchRoute = require('./routes/search-route')
 
 const app = express()
 
@@ -26,6 +28,9 @@ app.use(express.urlencoded({ extended: false }))
 app.get('/', (req, res) => {
   res.render(createPath('index'))
 })
+
+// post route
+app.use(searchRoute)
 
 // error route
 app.use((req, res) => {
