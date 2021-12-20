@@ -18,6 +18,8 @@ app.set('view engine', 'ejs')
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms'))
 // middleware for static files
 app.use(express.static(__dirname))
+// middleware for work with method POST
+app.use(express.urlencoded({ extended: false }))
 
 // ROUTES
 // main route
