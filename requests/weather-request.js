@@ -17,6 +17,7 @@ const getData = async (city) => {
 
     return {
       name: data.name,
+      country: data.sys.country,
       temp: celsius,
       icon:
         'https://openweathermap.org/img/wn/' + data.weather[0].icon + '.png',
