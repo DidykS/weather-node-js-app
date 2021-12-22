@@ -9,6 +9,8 @@ const morgan = require('morgan')
 const createPath = require('./helpers/create-path')
 // import search route
 const searchRoute = require('./routes/search-route')
+// import getData function
+const getData = require('./requests/weather-request')
 
 const app = express()
 
@@ -25,10 +27,11 @@ app.use(express.urlencoded({ extended: false }))
 
 // ROUTES
 // main route
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
   const title = 'Home'
+  const data = await getData()
 
-  res.render(createPath('index'), { title })
+  res.render(createPath('index'), { title, data })
 })
 
 // post route

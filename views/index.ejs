@@ -30,19 +30,15 @@
 
         <div class="wrapper__content">
           <div class="wrapper__content--header">
-            <div class="location">Lviv, Ukraine</div>
+            <div class="location"><%= data.name %>, <%= data.country %></div>
             <div id="date" class="date">Thursday, December 16</div>
           </div>
           <div class="wrapper__content--temp">
-            <div class="temperature">2°C</div>
+            <div class="temperature"><%= data.temp %>°C</div>
             <div class="icon">
-              <img
-                class="icon__img"
-                src="https://github.com/AsiaKo/WeatherApp/blob/master/img/icon/02d.png?raw=true"
-                alt=""
-              />
+              <img class="icon__img" src="<%= data.icon %>" alt="" />
             </div>
-            <div class="description">few clouds</div>
+            <div class="description"><%= data.description %></div>
           </div>
           <div class="wrapper__content--fall">
             <div class="wrapper__content--fall--item">
@@ -54,7 +50,7 @@
                   alt=""
                 />
               </div>
-              <div class="item__result">6.2km/h</div>
+              <div class="item__result"><%= data.wind %>km/h</div>
             </div>
             <div class="wrapper__content--fall--item">
               <div class="item__title">humidity</div>
@@ -65,7 +61,7 @@
                   alt=""
                 />
               </div>
-              <div class="item__result">20%</div>
+              <div class="item__result"><%= data.humidity %>%</div>
             </div>
             <div class="wrapper__content--fall--item">
               <div class="item__title item__title--lohi">
@@ -80,8 +76,8 @@
                 />
               </div>
               <div class="item__result item__result--lohi">
-                <span class="item__result--lo">10°</span>
-                <span class="item__result--hi">20°</span>
+                <span class="item__result--lo"><%= data.min %>°</span>
+                <span class="item__result--hi"><%= data.max %>°</span>
               </div>
             </div>
           </div>
