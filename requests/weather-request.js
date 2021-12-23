@@ -14,6 +14,8 @@ const getData = async (city = 'Lviv') => {
 
     const data = await response.json()
     const celsius = Math.round(data.main.temp - 273.15)
+    const minTemp = Math.round(data.main.temp_min - 273.15)
+    const maxTemp = Math.round(data.main.temp_max - 273.15)
 
     return {
       name: data.name,
@@ -24,8 +26,8 @@ const getData = async (city = 'Lviv') => {
       description: data.weather[0].description,
       humidity: data.main.humidity,
       wind: data.wind.speed,
-      min: data.main.temp_min,
-      max: data.main.temp_min,
+      min: minTemp,
+      max: maxTemp,
     }
   } catch (error) {
     console.log(error)
