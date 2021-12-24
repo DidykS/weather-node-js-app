@@ -31,3 +31,8 @@ const month = [
 date.textContent = `${days[nDate.getDay()]}, ${
   month[nDate.getMonth()]
 } ${nDate.getDate()}`
+
+const reloadBtn = document.querySelector('.wrapper__reload--btn')
+reloadBtn.addEventListener('click', () => {
+  window.location.href = '/'
+})

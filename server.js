@@ -10,7 +10,10 @@ const createPath = require('./helpers/create-path')
 // import search route
 const searchRoute = require('./routes/search-route')
 // import getData function
-const getData = require('./requests/weather-request')
+const { getPosData } = require('./requests/weather-request')
+// import navigator
+const { Navigator } = require('node-navigator')
+const navigator = new Navigator()
 
 const app = express()
 
@@ -27,11 +30,26 @@ app.use(express.urlencoded({ extended: false }))
 
 // ROUTES
 // main route
-app.get('/', async (req, res) => {
+app.get('/', (req, res) => {
   const title = 'Home'
-  const data = await getData()
 
-  res.render(createPath('index'), { title, data })
+  async function success(position) {
+    const latitude = position.latitude
+    const longitude = position.longitude
+
+    const data = await getPosData(latitude, longitude)
+
+    res.render(createPath('index'), { title, data })
+  }
+
+  function error(errror) {
+    console.log(error)
+  }
+
+  if (!navigator.geolocation) {
+  } else {
+    navigator.geolocation.getCurrentPosition(success, error)
+  }
 })
 
 // post route

@@ -85,6 +85,7 @@ a:hover {
   height: 40px;
   width: 40px;
   line-height: 10px;
+  font-size: 18px;
   outline: none;
   border-radius: 50%;
   border: 0;
@@ -108,6 +109,22 @@ a:hover {
   border-radius: 25px;
   color: #ffffff;
   font-size: 16px;
+}
+
+.wrapper__search--input::-webkit-input-placeholder {
+  color: #ffffff;
+}
+
+.wrapper__search--input:-ms-input-placeholder {
+  color: #ffffff;
+}
+
+.wrapper__search--input::-ms-input-placeholder {
+  color: #ffffff;
+}
+
+.wrapper__search--input::placeholder {
+  color: #ffffff;
 }
 
 .wrapper__content {
@@ -166,6 +183,26 @@ a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.wrapper__reload--btn {
+  margin: 6px;
+  height: 40px;
+  width: 40px;
+  line-height: 10px;
+  font-size: 20px;
+  outline: none;
+  border-radius: 50%;
+  border: 0;
+  background-color: #1919ff;
+  color: #ffffff;
+  cursor: pointer;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.wrapper__reload--btn:hover {
+  background-color: #0000e5;
 }
 
 .location {
