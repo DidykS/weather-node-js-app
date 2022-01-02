@@ -26,5 +26,8 @@
   "devDependencies": {
     "node-navigator": "^1.0.1",
     "nodemon": "^2.0.15"
+  },
+  "engines": {
+    "node": "14.17.6"
   }
 }
