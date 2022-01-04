@@ -6,6 +6,6 @@ const postData = require('../controllers/search-controller')
 // create router
 const router = express.Router()
 
-router.post('/', postData)
+router.post('/city', postData)
 
 module.exports = router
