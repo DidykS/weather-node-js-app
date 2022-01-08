@@ -18,14 +18,14 @@ const getData = async (city = 'Lviv') => {
     const maxTemp = Math.round(data?.main?.temp_max - 273.15)
 
     return {
-      name: data.name,
-      country: data.sys.country,
+      name: data?.name,
+      country: data?.sys?.country,
       temp: celsius,
       icon:
-        'https://openweathermap.org/img/wn/' + data.weather[0].icon + '.png',
-      description: data.weather[0].description,
-      humidity: data.main.humidity,
-      wind: data.wind.speed,
+        'https://openweathermap.org/img/wn/' + data?.weather[0]?.icon + '.png',
+      description: data?.weather[0]?.description,
+      humidity: data?.main?.humidity,
+      wind: data?.wind?.speed,
       min: minTemp,
       max: maxTemp,
     }
