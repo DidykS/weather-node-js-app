@@ -8,7 +8,7 @@ const postData = async (req, res) => {
   try {
     const { city } = req.body
     const data = await getData(city)
-    const title = data.name
+    const title = data?.name
 
     res.render(createPath('index'), { title, data })
   } catch (error) {

@@ -13,9 +13,9 @@ const getData = async (city = 'Lviv') => {
     )
 
     const data = await response.json()
-    const celsius = Math.round(data.main.temp - 273.15)
-    const minTemp = Math.round(data.main.temp_min - 273.15)
-    const maxTemp = Math.round(data.main.temp_max - 273.15)
+    const celsius = Math.round(data?.main?.temp - 273.15)
+    const minTemp = Math.round(data?.main?.temp_min - 273.15)
+    const maxTemp = Math.round(data?.main?.temp_max - 273.15)
 
     return {
       name: data.name,
